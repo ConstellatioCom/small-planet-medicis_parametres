@@ -135,10 +135,10 @@
                         <p class="mb-4 text-slate-600">Un squelette de requête utilisateur pour formuler des questions complètes et naturelles à une IA. Le modèle peut être copié via le bouton.</p>
                         <div id="prompt-archetype-text" class="bg-slate-100 p-4 rounded-md text-sm text-slate-800 font-mono relative">
                             Bonjour,<br><br>
-                            Je me présente : je suis [Métier], j'ai [Âge] ans. Mon entreprise est une [Statut Juridique de l'Entreprise] et j'exerce sous le statut de [Statut Social du Dirigeant]. Ma carrière a été plutôt [Trajectoire de Carrière].<br><br>
-                            Voici ma situation : Je suis [Situation Familiale] et mon/ma conjoint(e) a le statut de [Statut du Conjoint]. Mes revenus annuels sont d'environ [Nature et Volatilité des Revenus], mais ils sont assez [volatils/stables]. J'arrive à épargner environ [Capacité d'épargne] par mois. Mon patrimoine se compose principalement de [Patrimoine Existant] et mon endettement s'élève à [Endettement].<br><br>
-                            Mes objectifs et mes craintes : J'aimerais atteindre un revenu de [Objectif de Revenu à la Retraite] une fois à la retraite pour pouvoir [Projet de Vie à la Retraite]. Ma plus grande crainte est [Craintes]. Concernant mon entreprise, je pense à une [Situation face à la Transmission d'Entreprise] d'ici quelques années.<br><br>
-                            Ma question : Mon niveau de connaissance en finance est [Niveau de Connaissance Financière] et j'ai une tolérance au risque que je qualifierais de [Appétence au risque]. Je me sens un peu perdu(e) face à la complexité du système. Pouvez-vous m'aider à y voir plus clair et à déterminer si des solutions comme un PER seraient adaptées ?
+                            Je me présente : je suis [Métier], j'ai [Âge] ans. Mon entreprise est une [Statut juridique de l'entreprise] et j'exerce sous le statut de [Statut social du dirigeant]. Ma carrière a été plutôt [Trajectoire de carrière].<br><br>
+                            Voici ma situation : Je suis [Situation familiale] et mon/ma conjoint(e) a le statut de [Statut du conjoint]. Mes revenus annuels sont d'environ [Nature et volatilité des revenus], mais ils sont assez [volatils/stables]. J'arrive à épargner environ [Capacité d'épargne] par mois. Mon patrimoine se compose principalement de [Patrimoine existant] et mon endettement s'élève à [Endettement].<br><br>
+                            Mes objectifs et mes craintes : J'aimerais atteindre un revenu de [Objectif de revenu à la retraite] une fois à la retraite pour pouvoir [Projet de vie à la retraite]. Ma plus grande crainte est [Craintes]. Concernant mon entreprise, je pense à une [Situation face à la transmission d'entreprise] d'ici quelques années.<br><br>
+                            Ma question : Mon niveau de connaissance en finance est [Niveau de connaissance financière] et j'ai une tolérance au risque que je qualifierais de [Appétence au risque]. Je me sens un peu perdu(e) face à la complexité du système. Pouvez-vous m'aider à y voir plus clair et à déterminer si des solutions comme un PER seraient adaptées ?
                             <button onclick="copyToClipboard('prompt-archetype-text')" class="absolute top-2 right-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-sans font-bold py-1 px-2 rounded">Copier</button>
                         </div>
                     </div>
@@ -233,36 +233,36 @@
 
         const parametersData = [
             { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Métier", description: "Détermine la caisse de retraite (SSI pour artisans/commerçants, CNAVPL pour professions libérales)." },
-            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Statut Social du Dirigeant", description: "Bifurcation critique entre TNS (Travailleur Non Salarié) et Assimilé Salarié, impactant radicalement le régime et le niveau de protection." },
-            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Statut Juridique de l'Entreprise", description: "Lié au statut social, avec le cas notable du micro-entrepreneur." },
-            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Trajectoire de Carrière", description: "Identification des carrières 'polypensionnées' (alternance salariat/indépendance), source fréquente de complexité." },
-            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Situation face à la Transmission d'Entreprise", description: "Paramètre financier et psychologique majeur, l'entreprise étant souvent le principal actif retraite." },
-            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Stratégies d'Épargne Collective", description: "Mise en place de dispositifs (PEE, PERECO) pour soi-même et les salariés, offrant des avantages fiscaux et sociaux importants." },
+            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Statut social du dirigeant", description: "Bifurcation critique entre TNS (Travailleur Non Salarié) et Assimilé Salarié, impactant radicalement le régime et le niveau de protection." },
+            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Statut juridique de l'entreprise", description: "Lié au statut social, avec le cas notable du micro-entrepreneur." },
+            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Trajectoire de carrière", description: "Identification des carrières 'polypensionnées' (alternance salariat/indépendance), source fréquente de complexité." },
+            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Situation face à la transmission d'entreprise", description: "Paramètre financier et psychologique majeur, l'entreprise étant souvent le principal actif retraite." },
+            { category: "A. Identité et parcours professionnel", icon: "&#128188;", parameter: "Stratégies d'épargne collective", description: "Mise en place de dispositifs (PEE, PERECO) pour soi-même et les salariés, offrant des avantages fiscaux et sociaux importants." },
             
             { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Âge", description: "Détermine l'horizon de placement et l'urgence perçue." },
-            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Situation Familiale", description: "Impacte les droits à la réversion et la fiscalité." },
-            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Statut du Conjoint", description: "Cas critique du 'Conjoint Collaborateur', avec une échéance légale de 5 ans qui constitue un moment de vie charnière et anxiogène." },
-            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Projets des Enfants", description: "Charge financière pouvant temporairement réduire la capacité d'épargne retraite." },
-            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Santé et Prévoyance", description: "Influence l'arbitrage rente/capital et intègre la protection sociale globale." },
+            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Situation familiale", description: "Impacte les droits à la réversion et la fiscalité." },
+            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Statut du conjoint", description: "Cas critique du 'Conjoint Collaborateur', avec une échéance légale de 5 ans qui constitue un moment de vie charnière et anxiogène." },
+            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Projets des enfants", description: "Charge financière pouvant temporairement réduire la capacité d'épargne retraite." },
+            { category: "B. Situation personnelle et familiale", icon: "&#128106;", parameter: "Santé et prévoyance", description: "Influence l'arbitrage rente/capital et intègre la protection sociale globale." },
 
-            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Nature et Volatilité des Revenus", description: "La stabilité des revenus est un argument clé pour des produits d'épargne flexibles comme le PER." },
-            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Capacité d'Épargne", description: "Le montant disponible pour la préparation retraite." },
+            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Nature et volatilité des revenus", description: "La stabilité des revenus est un argument clé pour des produits d'épargne flexibles comme le PER." },
+            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Capacité d'épargne", description: "Le montant disponible pour la préparation retraite." },
             { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Fiscalité (TMI)", description: "Principal moteur de l'adhésion aux produits d'épargne retraite déductibles." },
-            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Patrimoine Existant", description: "Vision globale indispensable (PER, Madelin, Assurance-Vie, PEA, Immobilier), chaque enveloppe ayant ses propres règles." },
+            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Patrimoine existant", description: "Vision globale indispensable (PER, Madelin, Assurance-Vie, PEA, Immobilier), chaque enveloppe ayant ses propres règles." },
             { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Endettement", description: "Crédits pro et perso qui grèvent la capacité d'épargne." },
-            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Trésorerie d'Entreprise & Outils PM", description: "Capacité de la société à financer la retraite du dirigeant (ex: contrat de capitalisation). Levier distinct de l'épargne personnelle." },
+            { category: "C. Situation financière et patrimoniale", icon: "&#128184;", parameter: "Trésorerie d'entreprise & outils PM", description: "Capacité de la société à financer la retraite du dirigeant (ex: contrat de capitalisation). Levier distinct de l'épargne personnelle." },
 
-            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Objectif de Revenu à la Retraite", description: "Doit être quantifié pour devenir actionnable (montant, %, budget)." },
-            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Projet de Vie à la Retraite", description: "Détermine le niveau de revenu nécessaire." },
-            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Besoin de Liquidité", description: "Préférence fondamentale entre rente sécurisante et capital flexible. Le PER répond au besoin de contrôle des indépendants." },
+            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Objectif de revenu à la retraite", description: "Doit être quantifié pour devenir actionnable (montant, %, budget)." },
+            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Projet de vie à la retraite", description: "Détermine le niveau de revenu nécessaire." },
+            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Besoin de liquidité", description: "Préférence fondamentale entre rente sécurisante et capital flexible. Le PER répond au besoin de contrôle des indépendants." },
             { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Craintes", description: "Peur de manquer, de la dépendance, de la complexité. Des leviers émotionnels puissants." },
-            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Perception du Système de Retraite", description: "Le niveau de confiance (ou méfiance) conditionne la propension à surpondérer l'épargne par capitalisation." },
+            { category: "D. Objectifs, besoins et craintes", icon: "&#128173;", parameter: "Perception du système de retraite", description: "Le niveau de confiance (ou méfiance) conditionne la propension à surpondérer l'épargne par capitalisation." },
             
-            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Niveau de Connaissance Financière", description: "Débutant, intermédiaire, expert." },
-            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Implication dans la Gestion", description: "Délégataire (besoin d'être accompagné) ou autonome (veut comprendre et gérer)." },
-            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Appétence au Risque", description: "Prudent, équilibré, dynamique." },
-            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Valeurs Personnelles", description: "Sensibilité ISR, priorité à la transmission, etc." },
-            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Canaux d'Information Privilégiés", description: "L'expert-comptable est souvent le premier interlocuteur, mais les forums, banquiers et conseillers sont aussi clés." }
+            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Niveau de connaissance financière", description: "Débutant, intermédiaire, expert." },
+            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Implication dans la gestion", description: "Délégataire (besoin d'être accompagné) ou autonome (veut comprendre et gérer)." },
+            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Appétence au risque", description: "Prudent, équilibré, dynamique." },
+            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Valeurs personnelles", description: "Sensibilité ISR, priorité à la transmission, etc." },
+            { category: "E. Connaissances, préférences et comportements", icon: "&#129504;", parameter: "Canaux d'information privilégiés", description: "L'expert-comptable est souvent le premier interlocuteur, mais les forums, banquiers et conseillers sont aussi clés." }
         ];
 
         function populateAccordion() {
@@ -416,15 +416,15 @@ Instruction: Pour chaque scénario, piocher et combiner de manière logique les 
 
 LISTE EXHAUSTIVE DES PARAMÈTRES UTILISATEUR
 A. Identité et parcours professionnel
-Métier, Statut Social du Dirigeant, Statut Juridique de l'Entreprise, Trajectoire de Carrière, Situation face à la Transmission d'Entreprise, Stratégies d'Épargne Collective.
+Métier, Statut social du dirigeant, Statut juridique de l'entreprise, Trajectoire de carrière, Situation face à la transmission d'entreprise, Stratégies d'épargne collective.
 B. Situation personnelle et familiale
-Âge, Situation Familiale, Statut du Conjoint, Projets des Enfants, Santé et Prévoyance.
+Âge, Situation familiale, Statut du conjoint, Projets des enfants, Santé et prévoyance.
 C. Situation financière et patrimoniale
-Nature et Volatilité des Revenus, Capacité d'Épargne, Fiscalité (TMI), Patrimoine Existant, Endettement, Trésorerie d'Entreprise & Outils PM.
+Nature et volatilité des revenus, Capacité d'épargne, Fiscalité (TMI), Patrimoine existant, Endettement, Trésorerie d'entreprise & outils PM.
 D. Objectifs, besoins et craintes
-Objectif de Revenu à la Retraite, Projet de Vie à la Retraite, Besoin de Liquidité, Craintes, Perception du Système de Retraite.
+Objectif de revenu à la retraite, Projet de vie à la retraite, Besoin de liquidité, Craintes, Perception du système de retraite.
 E. Connaissances, préférences et comportements
-Niveau de Connaissance Financière, Implication dans la Gestion, Appétence au Risque, Valeurs Personnelles, Canaux d'Information Privilégiés.
+Niveau de connaissance financière, Implication dans la gestion, Appétence au risque, Valeurs personnelles, Canaux d'information privilégiés.
 
 TABLEAU DE CORRÉLATION POUR LA CRÉDIBILITÉ DES SCÉNARIOS
 - Si Statut TNS -> Probable : Détient PER/Madelin, Craint faible pension.
