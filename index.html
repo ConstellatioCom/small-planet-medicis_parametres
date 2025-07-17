@@ -3,22 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorateur de Stratégie Retraite pour Indépendants</title>
+    <title>Stratégie Retraite : Indépendants & Dirigeants TPE/PME</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Calm Guidance -->
-    <!-- Application Structure Plan: The application is designed as an interactive, single-page dashboard with a sticky top navigation for seamless movement between six key sections: 1) Accueil, 2) Piliers du Profil (interactive accordion), 3) Corrélations & Scénarios (interactive chart), 4) Outils de Prompting (copyable tools), 5) Tableau Synoptique (summary table), and 6) Prompt Originel (context). This structure provides a comprehensive journey, from a high-level introduction to detailed exploration, practical tools, a full data reference, and finally, the project's foundational brief. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: 5 main parameter categories (A-E). Goal: Organize/Inform. Method: Interactive accordion cards (HTML/CSS/JS). Interaction: Click to expand/collapse.
-        - Report Info: Correlation Table. Goal: Show Relationships. Method: Interactive Bar Chart (Chart.js/Canvas). Interaction: Click to display related text.
-        - Report Info: Archetypal & Generator Prompts. Goal: Provide Tools. Method: Styled text blocks with a "copy to clipboard" functionality.
-        - Report Info: All parameters. Goal: Summarize/Reference. Method: A comprehensive HTML table.
-        - Report Info: The initial project brief. Goal: Provide Context. Method: A formatted text block. Interaction: None, for reference only. Justification: Fulfills the user's request to show the project's origin.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -52,12 +42,12 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            height: 400px;
-            max-height: 50vh;
+            height: 450px;
+            max-height: 60vh;
         }
         @media (max-width: 768px) {
             .chart-container {
-                height: 300px;
+                height: 350px;
             }
         }
     </style>
@@ -67,7 +57,7 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
-                <h1 class="text-xl md:text-2xl font-bold text-slate-800">Stratégie Retraite Indépendants</h1>
+                <h1 class="text-xl md:text-2xl font-bold text-slate-800">Retraite Indépendants & TPE/PME</h1>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#accueil" class="nav-link pb-1">Accueil</a>
                     <a href="#piliers" class="nav-link pb-1">Piliers</a>
@@ -93,9 +83,9 @@
     <main>
         <section id="accueil" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Décrypter la Retraite des Indépendants</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Décrypter la Retraite des Indépendants & Dirigeants de TPE/PME</h2>
                 <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                    Cette application interactive traduit le rapport stratégique de Médicis en un explorateur dynamique. Elle vise à cartographier la complexité du système de retraite français pour les indépendants et à identifier les paramètres clés qui définissent leurs besoins. Naviguez à travers les sections pour découvrir les profils, comprendre leurs interconnexions et utiliser des outils pour générer des scénarios pertinents.
+                    Cette application interactive traduit un rapport stratégique en un explorateur dynamique. Elle vise à cartographier la complexité du système de retraite français pour les **indépendants, artisans, commerçants et chefs d'entreprise**, et à identifier les paramètres clés qui définissent leurs besoins. Naviguez pour découvrir les profils, comprendre leurs interconnexions et utiliser des outils de simulation.
                 </p>
             </div>
         </section>
@@ -103,8 +93,8 @@
         <section id="piliers" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Les 5 Piliers du Profil Utilisateur</h2>
-                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Chaque travailleur indépendant a une situation unique. Le rapport identifie cinq catégories de paramètres fondamentaux pour comprendre leurs attentes et leurs craintes face à la retraite. Cliquez sur chaque pilier pour explorer les facteurs qui le composent.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Les 5 Piliers du Profil Stratégique</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Chaque entrepreneur a une situation unique. Le rapport identifie cinq catégories de paramètres fondamentaux pour comprendre leurs attentes et leurs craintes face à la retraite. Cliquez sur chaque pilier pour explorer les facteurs qui le composent.</p>
                 </div>
                 <div id="accordion-container" class="space-y-4 max-w-4xl mx-auto">
                 </div>
@@ -115,7 +105,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Corrélations & Scénarios Clés</h2>
-                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Certains paramètres sont fortement liés et révèlent des profils types. Le graphique ci-dessous met en lumière les corrélations les plus importantes identifiées dans le rapport. Cliquez sur une barre pour voir les conséquences probables et mieux comprendre la logique derrière les scénarios utilisateurs.</p>
+                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Certains paramètres sont fortement liés et révèlent des profils types. Le graphique ci-dessous met en lumière les corrélations les plus importantes. Cliquez sur une barre pour voir les conséquences probables et mieux comprendre la logique derrière chaque scénario.</p>
                 </div>
                 <div class="flex flex-col lg:flex-row items-start gap-8">
                     <div class="w-full lg:w-1/2">
@@ -123,7 +113,7 @@
                             <canvas id="correlationChart"></canvas>
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2 bg-slate-100 p-6 rounded-lg shadow-inner min-h-[400px]">
+                    <div class="w-full lg:w-1/2 bg-slate-100 p-6 rounded-lg shadow-inner min-h-[450px]">
                         <h3 id="correlationTitle" class="text-2xl font-bold text-slate-800 mb-4">Cliquez sur un profil type</h3>
                         <div id="correlationText" class="text-slate-700 space-y-3">
                             <p>Les informations détaillées sur le profil sélectionné et ses implications probables s'afficheront ici.</p>
@@ -156,10 +146,10 @@
                         <h3 class="text-2xl font-bold mb-4">2. Le Prompt-Générateur de Scénarios</h3>
                         <p class="mb-4 text-slate-600">Un prompt "méta" complet, à soumettre à une IA, pour générer des profils d'utilisateurs variés et crédibles.</p>
                         <div id="prompt-generator-text" class="bg-slate-100 p-4 rounded-md text-sm text-slate-800 font-mono overflow-x-auto relative h-[420px] ">
-                            <strong class="font-sans text-base">Rôle :</strong> Tu es un générateur de personas expert, spécialisé dans le marché français des travailleurs indépendants...<br><br>
+                            <strong class="font-sans text-base">Rôle :</strong> Tu es un générateur de personas expert, spécialisé dans le marché français des travailleurs indépendants et des dirigeants de TPE/PME...<br><br>
                             <strong class="font-sans text-base">Contexte :</strong> Nous avons besoin de générer [x] scénarios d'utilisateurs uniques...<br><br>
                             <strong class="font-sans text-base">Instruction :</strong> Pour chaque scénario, tu dois piocher et combiner de manière logique les paramètres de la liste exhaustive ci-dessous...<br><br>
-                            <strong class="font-sans text-base">LISTE EXHAUSTIVE DES PARAMÈTRES...</strong> (Identité, Situation Personnelle, Financière, Objectifs, Connaissances)<br><br>
+                            <strong class="font-sans text-base">LISTE EXHAUSTIVE DES PARAMÈTRES...</strong><br><br>
                             <strong class="font-sans text-base">TABLEAU DE CORRÉLATION...</strong><br><br>
                             <strong class="font-sans text-base">Format de Sortie :</strong><br>
                             --- Scénario [Numéro] ---<br>
@@ -198,7 +188,7 @@
 
         <section id="prompt-originel" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
+                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Instruction Initiale (Brief du Projet)</h2>
                     <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
                         Voici l'instruction complète qui a servi de point de départ à cette analyse et à la création de cette application interactive. Elle définit le rôle, le contexte, les objectifs et les livrables qui ont structuré ce travail.
@@ -247,6 +237,7 @@
             { category: "A. Identité et Parcours Professionnel", icon: "&#128188;", parameter: "Statut Juridique de l'Entreprise", description: "Lié au statut social, avec le cas notable du micro-entrepreneur." },
             { category: "A. Identité et Parcours Professionnel", icon: "&#128188;", parameter: "Trajectoire de Carrière", description: "Identification des carrières 'polypensionnées' (alternance salariat/indépendance), source fréquente de complexité." },
             { category: "A. Identité et Parcours Professionnel", icon: "&#128188;", parameter: "Situation face à la Transmission d'Entreprise", description: "Paramètre financier et psychologique majeur, l'entreprise étant souvent le principal actif retraite." },
+            { category: "A. Identité et Parcours Professionnel", icon: "&#128188;", parameter: "Stratégies d'Épargne Collective", description: "Mise en place de dispositifs (PEE, PERECO) pour soi-même et les salariés, offrant des avantages fiscaux et sociaux importants." },
             
             { category: "B. Situation Personnelle et Familiale", icon: "&#128106;", parameter: "Âge", description: "Détermine l'horizon de placement et l'urgence perçue." },
             { category: "B. Situation Personnelle et Familiale", icon: "&#128106;", parameter: "Situation Familiale", description: "Impacte les droits à la réversion et la fiscalité." },
@@ -259,6 +250,7 @@
             { category: "C. Situation Financière et Patrimoniale", icon: "&#128184;", parameter: "Fiscalité (TMI)", description: "Principal moteur de l'adhésion aux produits d'épargne retraite déductibles." },
             { category: "C. Situation Financière et Patrimoniale", icon: "&#128184;", parameter: "Patrimoine Existant", description: "Vision globale indispensable (PER, Madelin, Assurance-Vie, PEA, Immobilier), chaque enveloppe ayant ses propres règles." },
             { category: "C. Situation Financière et Patrimoniale", icon: "&#128184;", parameter: "Endettement", description: "Crédits pro et perso qui grèvent la capacité d'épargne." },
+            { category: "C. Situation Financière et Patrimoniale", icon: "&#128184;", parameter: "Trésorerie d'Entreprise & Outils PM", description: "Capacité de la société à financer la retraite du dirigeant (ex: contrat de capitalisation). Levier distinct de l'épargne personnelle." },
 
             { category: "D. Objectifs, Besoins et Craintes", icon: "&#128173;", parameter: "Objectif de Revenu à la Retraite", description: "Doit être quantifié pour devenir actionnable (montant, %, budget)." },
             { category: "D. Objectifs, Besoins et Craintes", icon: "&#128173;", parameter: "Projet de Vie à la Retraite", description: "Détermine le niveau de revenu nécessaire." },
@@ -346,7 +338,8 @@
                 'Micro-entrepreneur', 
                 'Âge > 55 & ex-salarié', 
                 'Conjoint collab. > 4 ans', 
-                'TMI > 30%'
+                'TMI > 30%',
+                'Dirigeant de TPE/PME (Optimisation)'
             ],
             descriptions: [
                 { title: "Profil : Travailleur Non Salarié (TNS)", text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Crainte :</strong> Le niveau de la pension de base est perçu comme faible, générant une anxiété quant au futur revenu.</li><li><strong>Patrimoine :</strong> A souvent déjà souscrit ou s'intéresse activement à un contrat d'épargne retraite par capitalisation (PER, anciennement Madelin) pour compenser.</li></ul>` },
@@ -354,7 +347,11 @@
                 { title: "Profil : Micro-entrepreneur", text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Connaissance :</strong> Niveau de connaissance financière souvent débutant.</li><li><strong>Crainte :</strong> La complexité administrative est une peur majeure, notamment pour la déclaration des revenus et la compréhension des droits à la retraite.</li></ul>` },
                 { title: "Profil : Indépendant senior ex-salarié", text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Crainte :</strong> Forte anxiété liée à la perte potentielle de droits acquis pendant la période de salariat et à la complexité de la validation des trimestres entre différents régimes (carrière polypensionnée).</li><li><strong>Objectif :</strong> Cherche activement à comprendre comment consolider ses droits pour conserver la possibilité d'un départ anticipé si possible.</li></ul>` },
                 { title: "Profil : Chef d'entreprise avec conjoint collaborateur", text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Crainte :</strong> Sentiment d'urgence pour trouver une solution (statut de conjoint salarié/associé) avant l'échéance légale des 5 ans du statut de collaborateur.</li><li><strong>Canal d'info :</strong> Recherche très active d'informations et de témoignages sur le web et les forums spécialisés.</li></ul>` },
-                { title: "Profil : Indépendant à forte fiscalité", text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Objectif :</strong> L'optimisation fiscale est un moteur de décision majeur pour tout placement.</li><li><strong>Patrimoine :</strong> Intérêt très marqué pour le Plan d'Épargne Retraite (PER) en raison de la déductibilité des versements du revenu imposable.</li></ul>` }
+                { title: "Profil : Indépendant à forte fiscalité", text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Objectif :</strong> L'optimisation fiscale est un moteur de décision majeur pour tout placement.</li><li><strong>Patrimoine :</strong> Intérêt très marqué pour le Plan d'Épargne Retraite (PER) en raison de la déductibilité des versements du revenu imposable.</li></ul>` },
+                { 
+                    title: "Profil : Dirigeant de TPE/PME en quête d'optimisation",
+                    text: `<p><strong>Corrélations Probables :</strong></p><ul class="list-disc list-inside mt-2"><li><strong>Stratégie :</strong> L'arbitrage entre rémunération et dividendes est une préoccupation centrale.</li><li><strong>Leviers :</strong> Utilisation active de la trésorerie de l'entreprise pour des placements (ex: contrat de capitalisation) et mise en place de plans d'épargne collective (PERECO) pour maximiser les avantages fiscaux.</li><li><strong>Objectif :</strong> Vision patrimoniale globale, incluant les actifs pro et perso.</li></ul>` 
+                }
             ]
         };
         
@@ -365,9 +362,9 @@
                 labels: correlationData.labels,
                 datasets: [{
                     label: 'Impact sur la stratégie retraite',
-                    data: [10, 9, 7, 8, 9, 10],
-                    backgroundColor: ['rgba(52, 152, 219, 0.7)','rgba(26, 188, 156, 0.7)','rgba(241, 196, 15, 0.7)','rgba(230, 126, 34, 0.7)','rgba(155, 89, 182, 0.7)','rgba(231, 76, 60, 0.7)'],
-                    borderColor: ['rgba(52, 152, 219, 1)','rgba(26, 188, 156, 1)','rgba(241, 196, 15, 1)','rgba(230, 126, 34, 1)','rgba(155, 89, 182, 1)','rgba(231, 76, 60, 1)'],
+                    data: [10, 9, 7, 8, 9, 10, 9],
+                    backgroundColor: ['rgba(52, 152, 219, 0.7)','rgba(26, 188, 156, 0.7)','rgba(241, 196, 15, 0.7)','rgba(230, 126, 34, 0.7)','rgba(155, 89, 182, 0.7)','rgba(231, 76, 60, 0.7)', 'rgba(149, 165, 166, 0.7)'],
+                    borderColor: ['rgba(52, 152, 219, 1)','rgba(26, 188, 156, 1)','rgba(241, 196, 15, 1)','rgba(230, 126, 34, 1)','rgba(155, 89, 182, 1)','rgba(231, 76, 60, 1)', 'rgba(149, 165, 166, 1)'],
                     borderWidth: 1
                 }]
             },
@@ -411,19 +408,19 @@
         const element = document.getElementById(elementId);
         let textToCopy;
         if(isGenerator){
-            textToCopy = `Rôle : Tu es un générateur de personas expert, spécialisé dans le marché français des travailleurs indépendants. Ta mission est de créer des profils d'utilisateurs détaillés et réalistes qui serviront à tester et affiner des stratégies de contenu pour une mutuelle spécialiste de la retraite, comme Médicis.
+            textToCopy = `Rôle : Tu es un générateur de personas expert, spécialisé dans le marché français des travailleurs indépendants et des dirigeants de TPE/PME. Ta mission est de créer des profils d'utilisateurs détaillés et réalistes qui serviront à tester et affiner des stratégies de contenu pour une mutuelle spécialiste de la retraite.
 
-Contexte : Nous avons besoin de générer [x] scénarios d'utilisateurs uniques. Chaque scénario doit prendre la forme d'un récit à la première personne ("Je suis...") décrivant un indépendant qui s'interroge sur sa retraite. Les scénarios doivent être crédibles, variés et couvrir un large éventail de situations.
+Contexte : Nous avons besoin de générer [x] scénarios d'utilisateurs uniques. Chaque scénario doit prendre la forme d'un récit à la première personne ("Je suis...") décrivant un entrepreneur qui s'interroge sur sa retraite. Les scénarios doivent être crédibles, variés et couvrir un large éventail de situations.
 
 Instruction : Pour chaque scénario, tu dois piocher et combiner de manière logique les paramètres de la liste exhaustive ci-dessous. Tu dois impérativement respecter les règles de corrélation fournies dans le tableau pour garantir la crédibilité des profils.
 
 LISTE EXHAUSTIVE DES PARAMÈTRES UTILISATEUR
 A. Identité et Parcours Professionnel
-Métier, Statut Social du Dirigeant, Statut Juridique de l'Entreprise, Trajectoire de Carrière, Situation face à la Transmission d'Entreprise.
+Métier, Statut Social du Dirigeant, Statut Juridique de l'Entreprise, Trajectoire de Carrière, Situation face à la Transmission d'Entreprise, Stratégies d'Épargne Collective.
 B. Situation Personnelle et Familiale
 Âge, Situation Familiale, Statut du Conjoint, Projets des Enfants, Santé et Prévoyance.
 C. Situation Financière et Patrimoniale
-Nature et Volatilité des Revenus, Capacité d'Épargne, Fiscalité (TMI), Patrimoine Existant, Endettement.
+Nature et Volatilité des Revenus, Capacité d'Épargne, Fiscalité (TMI), Patrimoine Existant, Endettement, Trésorerie d'Entreprise & Outils PM.
 D. Objectifs, Besoins et Craintes
 Objectif de Revenu à la Retraite, Projet de Vie à la Retraite, Besoin de Liquidité, Craintes, Perception du Système de Retraite.
 E. Connaissances, Préférences et Comportements
@@ -431,16 +428,17 @@ Niveau de Connaissance Financière, Implication dans la Gestion, Appétence au R
 
 TABLEAU DE CORRÉLATION POUR LA CRÉDIBILITÉ DES SCÉNARIOS
 - Si Statut TNS -> Probable : Détient PER/Madelin, Craint faible pension.
-- Si Artisan (Boulanger, Garagiste) -> Probable : Cession d'entreprise est le projet, capital de la vente est l'apport principal.
+- Si Artisan -> Probable : Cession d'entreprise est le projet, capital de la vente est l'apport principal.
+- Si Dirigeant de TPE/PME -> Probable : Optimisation rémunération/dividendes, Utilisation trésorerie d'entreprise, Intérêt pour PEE/PERECO.
 - Si Micro-entrepreneur -> Probable : Connaissance débutante, Craint complexité administrative.
-- Si Âge > 55 ans & Ancien salarié -> Probable : Craint perte de droits, Veut départ anticipé.
-- Si Conjoint Collaborateur > 4 ans -> Probable : Urgence de trouver solution avant 5 ans, Recherche active web/forums.
+- Si Âge > 55 ans & Ancien salarié -> Probable : Craint perte de droits (polypensionné).
+- Si Conjoint Collaborateur > 4 ans -> Probable : Urgence de trouver solution avant 5 ans.
 - Si TMI > 30% -> Probable : Objectif d'optimisation fiscale, Intérêt pour le PER.
 
 Format de Sortie :
 Génère [x] scénarios. Chaque scénario doit être présenté sous la forme suivante :
 --- Scénario [Numéro] ---
-Titre du Profil : (Ex: L'Artisan Proche de la Cession)
+Titre du Profil : (Ex: Le Dirigeant de PME qui optimise sa transmission)
 Récit à la première personne : (Paragraphe de 150-200 mots)
 Tableau Récapitulatif des Paramètres Clés : (Métier, Statut, Âge, Objectif, Crainte, Produit d'intérêt)
 ------------------------`;
@@ -464,4 +462,3 @@ Tableau Récapitulatif des Paramètres Clés : (Métier, Statut, Âge, Objectif,
 
 </body>
 </html>
-
